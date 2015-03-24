@@ -17,6 +17,8 @@ class QuestionsController < ApplicationController
 	    @question = Question.new(question_params)
 	    if @question.save
 		    flash[:success] = "Question created!"
+		    # UserMailer.welcome_email(@user).deliver_later
+ 			Questionmailer.welcome_email(@question).deliver
 		    #we need to send a message to other students
 		    redirect_to root_url
 	    else
