@@ -5,7 +5,18 @@
   </head>
   <body>
     <p>
-      <%= @question.content %> ?
+      <h1><%= @question.content %> ?</h1>
+      <br>The Questioner:
+      <%= @question.student.email %>
+      <br>The Listener: <!--  Under Working -->
+      <% @id = @question.behaf_id %>
+      <% @temp_student = Student.find(@id)%>
+      <%= @temp_student.email %>
+
+      
+      </p>
+
+      <p>
       To login to the site, just follow this link: <%=link_to @url, @url %>.
     </p>
     <p>Thanks for joining and have a great day!</p>
