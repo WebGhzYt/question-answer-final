@@ -8,11 +8,14 @@ class QuestionsController < ApplicationController
 
 	def new
 		@students = Student.where(:role => false)  	
-		@question = Question.new
+		@question = Question.new		
+		# @sender = Sender.new
 	end
 
 	def create		
 	    @question = Question.new(question_params)
+	    # @sender = @question.sender.new(params[:ans_mail_id,:question_id])    
+
 	    if @question.save
 		    flash[:success] = "Question created!"
 		    # UserMailer.welcome_email(@user).deliver_later
@@ -28,7 +31,11 @@ class QuestionsController < ApplicationController
 
     def question_params
       params.require(:question).permit(:content,:student_id,:behaf_id,:ans_mail_id)
-
     end
+
+    def sender_params
+	  params.require(:question).permit(:ans_mail_id)    
+    end
+
 
 end

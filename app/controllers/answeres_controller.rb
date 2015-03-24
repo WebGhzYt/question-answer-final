@@ -5,9 +5,9 @@ class AnsweresController < ApplicationController
   	
   	def new		
   		@new_student_mail_id = params[:id]
-  		# @question = Question.where(behaf_id: )
+  		@question_id = Question.where(id: 35 )
   		#behaf_id find
-		@answere = Answere.new
+		  @answere = Answere.new
 	end
 
 	def create		

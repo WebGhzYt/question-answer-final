@@ -4,7 +4,8 @@ class Questionmailer < ApplicationMailer
 		# @question.ans_mail_id
     	@question = question
     	# @question_mail_id[] = @question.ans_mail_id.split(",")
-	    @url  = "http://localhost:3000/answeres/new/"
+	    @url  = "https://question-ans.herokuapp.com/answeres/new/"
     	mail(to: @question.ans_mail_id.split(","), subject: 'Question from localhost')
+    	# mail(to: @question.sender.ans_mail_id, subject: 'Question from localhost')
   	end
 end

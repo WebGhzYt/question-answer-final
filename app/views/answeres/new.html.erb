@@ -3,5 +3,6 @@
 		<%= f.label :Answare %>			 
 		<%= f.text_area :content, autofocus: true %><br>
 		<%= f.hidden_field :mail_id, value: @new_student_mail_id %>
-		<%= f.submit "Send Answare" %>
+		<%#= f.hidden_field :question_id, value: @question_id %>	
+		<%= f.submit "Send" %>
 	<% end %>

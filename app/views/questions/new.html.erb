@@ -6,7 +6,8 @@
     		<%= f.hidden_field :student_id, value: current_student.id %>
 			<%= f.label :behaf_id, "Listener" %>		
 			<%= f.collection_select(:behaf_id, Student.where(:role => false), :id, :email, {:prompt => "Select One"}) %>
-			<br>			 
+			<br>			
+			 
 			<%= f.label :ans_mail_id, "Reciver(Seprate by Comma(,))" %>		
 			<%= f.text_field :ans_mail_id  %>
 			<br>			 
