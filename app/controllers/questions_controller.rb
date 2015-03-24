@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
   private
 
     def question_params
-      params.require(:question).permit(:content,:student_id,:ans_id)
+      params.require(:question).permit(:content,:student_id,:behaf_id,:ans_mail_id)
 
     end
 
