@@ -2,9 +2,9 @@
 <% if student_signed_in? %>
 	<%= link_to 'LogOut', destroy_student_session_path , method: :delete%>
 	<% if current_student.role == true %>
-		you are questioner
+		<%= link_to 'New Question', new_question_path %>
 	<% else%>
-		you are answerer
+		you are answerer 		
 	<% end %>
 
 <% else %>

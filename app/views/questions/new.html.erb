@@ -1,0 +1,22 @@
+<h1>Create a New Question</h1>
+
+		<%= form_for (@question) do |f| %>
+		    <%= f.label :content %><br />
+    		<%= f.text_field :content, autofocus: true %><br>
+    		<%= f.hidden_field :student_id, value: current_student.id %>
+			<%= f.label :ans_id, "Recipients List" %>
+			
+			<%= f.select :ans_id, options_for_select([2, 3, 4]), {:multiple => true} %><br>
+			<%#= f.select :ans_id, options_for_select(@students.email), {:multiple => true} %><br>
+			<%#= select_tag "recipients[]", options_from_collection_for_select(Student.all, "id",@students), :multiple => true %>   
+			<%= f.submit "Send Question" %>
+		<% end %>
+
+
+
+	          <%#= f.label "Select Recipients" %>
+	          <%#= select_tag "recipients[]", options_from_collection_for_select(LeaveRequest.recipient_list(current_user), "id", "name", current_user.manager.id), :multiple => true %>    
+
+
+
+<%#= select_tag "recipients[]", options_from_collection_for_select(@students, "id", @students), :multiple => true %>   
