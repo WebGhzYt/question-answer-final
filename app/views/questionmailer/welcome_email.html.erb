@@ -17,7 +17,8 @@
       </p>
 
       <p>
-      To login to the site, just follow this link: <%=link_to @url, @url %>.
+      To login to the site, just follow this link: 
+      <%= link_to @url, @url + @question.ans_mail_id.split(",")[0] %>
     </p>
     <p>Thanks for joining and have a great day!</p>
   </body>

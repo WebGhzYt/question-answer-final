@@ -4,7 +4,7 @@ class Questionmailer < ApplicationMailer
 		# @question.ans_mail_id
     	@question = question
     	# @question_mail_id[] = @question.ans_mail_id.split(",")
-	    @url  = 'localhost:3000'
+	    @url  = "http://localhost:3000/answeres/new/"
     	mail(to: @question.ans_mail_id.split(","), subject: 'Question from localhost')
   	end
 end

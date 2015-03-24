@@ -4,8 +4,6 @@ class QuestionsController < ApplicationController
 	def index
 		# @questions = Question.all
 		# @students = Student.all
-		
-
 	end
 
 	def new

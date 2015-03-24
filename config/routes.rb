@@ -4,6 +4,14 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :questions
+
+  get 'answeres/new/:id' => "answeres#new"
+  
+  resources :answeres
+
+  # get 'answeres/show/:id' => "answere#show"
+  # get 'answeres/new' => "answere#new"
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
